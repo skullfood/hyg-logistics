@@ -87,7 +87,30 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden">
-                    <button class="text-slate-900 p-2"><i data-lucide="menu"></i></button>
+                    <button id="mobile-menu-button" class="text-slate-900 p-2 focus:outline-none">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                        <i data-lucide="x" id="close-icon" class="hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#about" class="mobile-link block px-3 py-4 text-base font-semibold border-b border-slate-50">About Us</a>
+                <a href="#who-we-serve" class="mobile-link block px-3 py-4 text-base font-semibold border-b border-slate-50">Who We Serve</a>
+                <a href="#expertise" class="mobile-link block px-3 py-4 text-base font-semibold border-b border-slate-50">Our Expertise</a>
+                <div class="py-2">
+                    <p class="px-3 text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Solutions</p>
+                    <a href="#devices" class="mobile-link block px-6 py-3 text-sm font-medium">Medical Devices</a>
+                    <a href="#equipment" class="mobile-link block px-6 py-3 text-sm font-medium">Medical Equipment</a>
+                    <a href="#software" class="mobile-link block px-6 py-3 text-sm font-medium">Software Solutions</a>
+                </div>
+                <div class="pt-4 px-3">
+                    <a href="#contact" class="mobile-link block w-full text-center bg-teal-600 text-white px-6 py-4 rounded-xl font-bold">
+                        Speak with our Consultant
+                    </a>
                 </div>
             </div>
         </div>
@@ -393,6 +416,37 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>

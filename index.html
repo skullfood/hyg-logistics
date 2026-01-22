@@ -21,6 +21,35 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+        
+        /* Black Glossy Background Effect */
+        .glossy-black-panel {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+            border: 1px solid #333;
+            box-shadow: 
+                inset 0 1px 0 rgba(255,255,255,0.1), 
+                0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .glossy-black-panel::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Green Glossy Text Effect */
+        .glossy-green-brand {
+            color: #4ade80; /* Vibrant Medical Green */
+            text-shadow: 
+                0 0 10px rgba(74, 222, 128, 0.5),
+                0 0 2px rgba(255,255,255,0.3);
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            position: relative;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -40,7 +69,7 @@
                     <a href="#who-we-serve" class="text-sm font-semibold hover:text-teal-600 transition">Who We Serve</a>
                     <a href="#expertise" class="text-sm font-semibold hover:text-teal-600 transition">Our Expertise</a>
                     
-                    <!-- Solutions Dropdown Logic Simulation -->
+                    <!-- Solutions Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center gap-1 text-sm font-semibold hover:text-teal-600 transition">
                             Solutions <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -96,26 +125,35 @@
 
     <!-- STATS / CLIENTS BAR -->
     <div class="bg-white border-b border-slate-200 py-10">
-        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-around gap-8">
-            <div class="text-center">
-                <p class="text-3xl font-bold text-slate-900">50+</p>
-                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Global Partners</p>
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
+            <div class="flex justify-around lg:col-span-1 border-r border-slate-100 pr-4">
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">50+</p>
+                    <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Global Partners</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-slate-900">100%</p>
+                    <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Compliance</p>
+                </div>
             </div>
-            <div class="text-center">
-                <p class="text-3xl font-bold text-slate-900">100%</p>
-                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Regulatory Compliance</p>
-            </div>
-            <div class="text-center">
-                <p class="text-3xl font-bold text-slate-900">2hr</p>
-                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Consultation Lead Time</p>
-            </div>
-            <div class="text-center border-l border-slate-200 pl-8 hidden md:block">
-                <p class="text-xs text-slate-400 mb-2 uppercase font-bold">Authorized Brands</p>
-                <div class="flex gap-4 opacity-50 grayscale contrast-125">
-                    <span class="font-bold text-sm">SIEMENS</span>
-                    <span class="font-bold text-sm">PHILIPS</span>
-                    <span class="font-bold text-sm">GE HEALTHCARE</span>
-                    <span class="font-bold text-sm">MEDTRONIC</span>
+
+            <!-- AUTHORIZED BRANDS - BLACK GLOSSY PANEL -->
+            <div class="lg:col-span-3">
+                <div class="glossy-black-panel rounded-2xl py-6 px-8 flex flex-col md:flex-row items-center gap-6">
+                    <div class="md:border-r border-white/10 pr-6 flex-shrink-0">
+                        <p class="text-[10px] text-white/50 uppercase font-black tracking-[0.2em]">Authorized Brands</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-3">
+                        <span class="glossy-green-brand text-xs">SIEMENS</span>
+                        <span class="glossy-green-brand text-xs">PHILIPS</span>
+                        <span class="glossy-green-brand text-xs">GE HEALTHCARE</span>
+                        <span class="glossy-green-brand text-xs">MEDTRONIC</span>
+                        <span class="glossy-green-brand text-xs">OMNIPOD</span>
+                        <span class="glossy-green-brand text-xs">STRYKER</span>
+                        <span class="glossy-green-brand text-xs">ABBOTT</span>
+                        <span class="glossy-green-brand text-xs">BAXTER</span>
+                        <span class="glossy-green-brand text-xs">ROCHE</span>
+                    </div>
                 </div>
             </div>
         </div>

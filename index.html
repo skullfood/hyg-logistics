@@ -1,71 +1,346 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HYG Logistics | Global Supply Chain Solutions</title>
+    <title>HYG Logistics | Premium Medical Sourcing & Software Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for a modern professional look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .medical-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0d9488 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-900 font-sans">
+<body class="bg-slate-50 text-slate-900">
 
-    <nav class="p-6 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
-        <h1 class="text-2xl font-bold tracking-tighter text-blue-600">HYG LOGISTICS</h1>
-        <div class="space-x-8 hidden md:flex font-medium">
-            <a href="#services" class="hover:text-blue-600 transition">Services</a>
-            <a href="#about" class="hover:text-blue-600 transition">About</a>
-            <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Get a Quote</a>
+    <!-- NAVIGATION BAR -->
+    <nav class="glass-nav fixed w-full z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">H</div>
+                    <span class="text-xl font-extrabold tracking-tighter text-slate-900 uppercase">HYG <span class="text-teal-600">Logistics</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="#about" class="text-sm font-semibold hover:text-teal-600 transition">About Us</a>
+                    <a href="#who-we-serve" class="text-sm font-semibold hover:text-teal-600 transition">Who We Serve</a>
+                    <a href="#expertise" class="text-sm font-semibold hover:text-teal-600 transition">Our Expertise</a>
+                    
+                    <!-- Solutions Dropdown Logic Simulation -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-sm font-semibold hover:text-teal-600 transition">
+                            Solutions <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block w-48 bg-white border border-slate-100 shadow-xl rounded-xl mt-2 p-2">
+                            <a href="#devices" class="block px-4 py-2 text-sm hover:bg-slate-50 rounded-lg">Medical Devices</a>
+                            <a href="#equipment" class="block px-4 py-2 text-sm hover:bg-slate-50 rounded-lg">Medical Equipment</a>
+                            <a href="#software" class="block px-4 py-2 text-sm hover:bg-slate-50 rounded-lg">Software Solutions</a>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-teal-700 transition flex items-center gap-2">
+                        Speak with our Consultant
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button class="text-slate-900 p-2"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-24 px-6 text-center">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">Moving the World, <br><span class="text-blue-400">One Shipment at a Time.</span></h2>
-        <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10">Precision logistics, global reach, and real-time transparency for your supply chain.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-4">
-            <button class="bg-white text-slate-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition">Track Shipment</button>
-            <button class="border border-slate-500 px-8 py-4 rounded-lg font-bold hover:bg-slate-800 transition">Our Fleet</button>
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 medical-gradient text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:w-2/3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-6">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                    </span>
+                    Southern California Medical Sourcing
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6">
+                    Integrated Logistics for <span class="text-teal-400 font-light italic">Next-Gen</span> Healthcare.
+                </h1>
+                <p class="text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
+                    HYG Logistics bridges the gap between global medical innovation and Southern California’s healthcare providers. We specialize in the end-to-end procurement and distribution of high-precision hardware and digital health solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-teal-50 transition text-center">Inquire for Sourcing</a>
+                    <a href="#expertise" class="border border-white/20 bg-white/5 backdrop-blur px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition text-center">View Technical Expertise</a>
+                </div>
+            </div>
         </div>
-    </header>
+        <!-- Abstract Background Element -->
+        <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+            <i data-lucide="activity" class="w-[600px] h-[600px] text-white"></i>
+        </div>
+    </section>
 
-    <section id="services" class="py-20 px-6 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-12 text-center">Core Solutions</h3>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="text-blue-600 text-3xl mb-4">🚢</div>
-                <h4 class="text-xl font-bold mb-2">Ocean Freight</h4>
-                <p class="text-slate-600">Global port-to-port solutions with optimized routing for cost-efficiency.</p>
+    <!-- STATS / CLIENTS BAR -->
+    <div class="bg-white border-b border-slate-200 py-10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-around gap-8">
+            <div class="text-center">
+                <p class="text-3xl font-bold text-slate-900">50+</p>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Global Partners</p>
             </div>
-            <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="text-blue-600 text-3xl mb-4">🚛</div>
-                <h4 class="text-xl font-bold mb-2">Road Transport</h4>
-                <p class="text-slate-600">Reliable last-mile delivery and interstate haulage with real-time GPS tracking.</p>
+            <div class="text-center">
+                <p class="text-3xl font-bold text-slate-900">100%</p>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Regulatory Compliance</p>
             </div>
-            <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="text-blue-600 text-3xl mb-4">📦</div>
-                <h4 class="text-xl font-bold mb-2">Warehousing</h4>
-                <p class="text-slate-600">Smart storage solutions with automated inventory management.</p>
+            <div class="text-center">
+                <p class="text-3xl font-bold text-slate-900">2hr</p>
+                <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Consultation Lead Time</p>
+            </div>
+            <div class="text-center border-l border-slate-200 pl-8 hidden md:block">
+                <p class="text-xs text-slate-400 mb-2 uppercase font-bold">Authorized Brands</p>
+                <div class="flex gap-4 opacity-50 grayscale contrast-125">
+                    <span class="font-bold text-sm">SIEMENS</span>
+                    <span class="font-bold text-sm">PHILIPS</span>
+                    <span class="font-bold text-sm">GE HEALTHCARE</span>
+                    <span class="font-bold text-sm">MEDTRONIC</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="aspect-square bg-slate-100 rounded-3xl overflow-hidden relative border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" alt="Medical Sourcing" class="object-cover w-full h-full opacity-80">
+                        <div class="absolute inset-0 bg-teal-900/10"></div>
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-teal-600 text-white p-8 rounded-2xl shadow-2xl hidden md:block">
+                        <p class="text-lg font-bold">SoCal's Preferred Partner</p>
+                        <p class="text-sm opacity-80">Trusted by 200+ Regional Facilities</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900">The HYG Advantage in <span class="text-teal-600">Bio-Medical Procurement.</span></h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        HYG Logistics is more than a reseller; we are a strategic sourcing partner specialized in the high-stakes world of medical hardware and software. Based in the heart of Southern California, we navigate the complex supply chains of the medical industry to bring clinics, labs, and surgical centers the tools they need for excellence.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 bg-teal-50 rounded-lg text-teal-600"><i data-lucide="check-circle-2"></i></div>
+                            <div>
+                                <h4 class="font-bold">Strategic Sourcing Expertise</h4>
+                                <p class="text-sm text-slate-500">Global manufacturer relationships ensuring price stability and hardware availability.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 bg-teal-50 rounded-lg text-teal-600"><i data-lucide="shield-check"></i></div>
+                            <div>
+                                <h4 class="font-bold">Compliance-First Logistics</h4>
+                                <p class="text-sm text-slate-500">Handling and transport that exceeds FDA and HIPAA requirements for medical equipment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-slate-100 py-20 px-6">
-        <div class="max-w-4xl mx-auto bg-white p-10 rounded-3xl shadow-xl">
-            <h3 class="text-3xl font-bold mb-4 text-center">Ready to Ship?</h3>
-            <p class="text-center text-slate-500 mb-8">Fill out the form below and our team will contact you within 2 hours.</p>
-            <form class="grid gap-4">
-                <input type="text" placeholder="Full Name" class="p-4 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
-                <input type="email" placeholder="Email Address" class="p-4 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
-                <textarea placeholder="Tell us about your cargo..." class="p-4 border rounded-xl h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-                <button class="bg-blue-600 text-white p-4 rounded-xl font-bold hover:bg-blue-700 transition">Request Free Quote</button>
-            </form>
+    <!-- WHO WE SERVE -->
+    <section id="who-we-serve" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Dedicated to Healthcare Professionals</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">We provide tailored supply solutions for the most demanding environments in the medical field.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <i data-lucide="microscope" class="w-10 h-10 text-teal-400 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-2">Diagnostics Labs</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Precision diagnostic hardware and laboratory information systems (LIS) for high-volume testing centers.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <i data-lucide="building-2" class="w-10 h-10 text-teal-400 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-2">Private Clinics</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Turnkey equipment solutions for boutique practices, from surgical lights to patient monitors.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <i data-lucide="file-check" class="w-10 h-10 text-teal-400 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-2">Insurance Groups</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Actuarial and medical software solutions for streamline claims processing and provider management.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
+                    <i data-lucide="truck" class="w-10 h-10 text-teal-400 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-2">Equipment Resellers</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">B2B supply chain support for local vendors requiring specialized medical transport and storage.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-slate-400 text-sm">
-        © 2026 HYG Logistics. All Rights Reserved. | www.HYG-logistics.com
+    <!-- SOLUTIONS SECTION -->
+    <section id="solutions" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Our Core Solutions</h2>
+            <p class="text-slate-500 mb-16 max-w-xl mx-auto">Sourcing the technology that powers clinical success.</p>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Device Sourcing -->
+                <div id="devices" class="bg-white p-2 rounded-3xl shadow-sm border border-slate-200 card-hover transition duration-300">
+                    <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=400" alt="Medical Devices" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-left">
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Medical Devices</h4>
+                        <p class="text-slate-500 text-sm mb-6">High-frequency sourcing for cardiac monitors, ultrasound units, and infusion pumps from brands like Medtronic and Stryker.</p>
+                        <ul class="text-xs space-y-2 font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600"></i> Class II & III Device Specialist</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600"></i> Sterile Supply Chain Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hardware/Equipment -->
+                <div id="equipment" class="bg-white p-2 rounded-3xl shadow-sm border border-slate-200 card-hover transition duration-300">
+                    <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=400" alt="Medical Equipment" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-left">
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Clinical Equipment</h4>
+                        <p class="text-slate-500 text-sm mb-6">End-to-end procurement of MRI components, CT scanners, and surgical robotics for hospitals and centers.</p>
+                        <ul class="text-xs space-y-2 font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600"></i> Siemens & Philips Auth. Sourcing</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600"></i> Professional Installation Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Software -->
+                <div id="software" class="bg-white p-2 rounded-3xl shadow-sm border border-slate-200 card-hover transition duration-300">
+                    <div class="h-48 bg-slate-100 rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400" alt="Software Solutions" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 text-left">
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Software Solutions</h4>
+                        <p class="text-slate-500 text-sm mb-6">Digital integration for the modern clinic: Telehealth platforms, AI-driven diagnostics, and Practice Management systems.</p>
+                        <ul class="text-xs space-y-2 font-semibold text-slate-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600"></i> Custom ERP & LIS Integration</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-teal-600"></i> HIPAA-Compliant Data Pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div class="bg-slate-900 rounded-[3rem] p-8 lg:p-16 text-white shadow-2xl flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">Speak with our Consultant</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Ready to optimize your facility's supply chain? Our lead consultants are available for personalized sourcing audits in the Southern California region.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <i data-lucide="map-pin" class="text-teal-400"></i>
+                            <div>
+                                <p class="font-bold">Regional HQ</p>
+                                <p class="text-sm text-slate-400">Irvine, California</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="mail" class="text-teal-400"></i>
+                            <div>
+                                <p class="font-bold">Consultation Desk</p>
+                                <p class="text-sm text-slate-400 text-teal-500">consult@hyg-logistics.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 bg-white/5 rounded-3xl p-8 border border-white/10">
+                    <form class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Full Name" class="w-full bg-white/10 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-teal-500">
+                            <input type="email" placeholder="Professional Email" class="w-full bg-white/10 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-teal-500">
+                        </div>
+                        <select class="w-full bg-white/10 border border-white/10 rounded-xl p-3 text-slate-300 focus:outline-none focus:border-teal-500">
+                            <option>Sourcing Consultation</option>
+                            <option>Equipment Sourcing</option>
+                            <option>Software Implementation</option>
+                            <option>Resale Partnership</option>
+                        </select>
+                        <textarea placeholder="Tell us about your sourcing needs..." class="w-full bg-white/10 border border-white/10 rounded-xl p-3 text-white h-32 focus:outline-none focus:border-teal-500"></textarea>
+                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 rounded-xl transition">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="absolute right-0 top-0 w-64 h-64 bg-teal-600/10 rounded-full blur-[100px]"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-50 border-t border-slate-200 py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-bold">H</div>
+                        <span class="text-xl font-bold tracking-tighter text-slate-900 uppercase tracking-widest">HYG <span class="text-teal-600">LOGISTICS</span></span>
+                    </div>
+                    <p class="text-slate-500 max-w-sm mb-6">
+                        Driving healthcare forward through intelligent sourcing and specialized medical logistics in Southern California.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-slate-400 hover:text-teal-600"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-teal-600"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Navigation</h5>
+                    <ul class="space-y-4 text-sm text-slate-500 font-medium">
+                        <li><a href="#about" class="hover:text-teal-600 transition">About Us</a></li>
+                        <li><a href="#solutions" class="hover:text-teal-600 transition">Solutions</a></li>
+                        <li><a href="#who-we-serve" class="hover:text-teal-600 transition">Client Groups</a></li>
+                        <li><a href="#contact" class="hover:text-teal-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Compliance</h5>
+                    <ul class="space-y-4 text-sm text-slate-500 font-medium">
+                        <li><a href="#" class="hover:text-teal-600 transition">HIPAA Policy</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition">FDA Guidelines</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-teal-600 transition">Privacy Shield</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 text-center text-xs text-slate-400 font-bold uppercase tracking-widest">
+                &copy; 2026 HYG Logistics & Supply Chain. All rights reserved. | www.HYG-logistics.com
+            </div>
+        </div>
     </footer>
 
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
